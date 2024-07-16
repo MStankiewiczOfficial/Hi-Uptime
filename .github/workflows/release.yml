@@ -40,5 +40,5 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: src/Hi-Uptime.bttpreset
-        asset_name: file.txt
+        asset_name: Hi-Uptime.bttpreset
         asset_content_type: application/octet-stream
