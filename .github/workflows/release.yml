@@ -13,13 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Get the commit message
-      id: get_commit_message
+    - name: Get the commit message and version
+      id: get_commit_metadata
       run: echo "::set-output name=message::$(git log -1 --pretty=%B)"
-
-    - name: Get the current version
-      id: get_version
-      run: echo "::set-output name=version::$(date +%Y%m%d%H%M%S)"
 
     - name: Create Release
       id: create_release
@@ -27,8 +23,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v${{ steps.get_version.outputs.version }}
-        release_name: ${{ steps.get_commit_message.outputs.message }}
+        tag_name: v${{ steps.get_commit_metadata.outputs.message }}
+        release_name: ${{ steps.get_commit_metadata.outputs.message }}
         body: Automatically generated release from GitHub Actions.
         draft: false
         prerelease: false
