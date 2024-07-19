@@ -11,9 +11,7 @@
 Did you know that rebooting your computer on a regular basis speeds it up?
 ***Hi Uptime!*** is a preset for BetterTouchTool that will easily remind you to reboot your Mac regularly after 15 days since the last boot. The message will appear every time you wake up your Mac and the specified number of days (default: 15) is exceeded.
 
-## Instalation
-
-### The fastest and safest way is to click the button below.
+## Installation
 
 ### Install from a [file](https://github.com/MStankiewiczOfficial/Hi-Uptime/releases/latest).
 
